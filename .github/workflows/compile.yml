@@ -20,9 +20,12 @@ jobs:
             - name: Compiling src.bat
               run: |
                   compiler/Bat2Exe.bat src.bat
-            - name: Uploading artifact
-              uses: actions/upload-artifact@v3
-              with:
-                  name: macos-vm-installer.exe
-                  path: compiler/src.exe
-                  if-no-files-found: error
+            - name: Directory listing (testing only)
+              run: |
+                  tree
+            # - name: Uploading artifact
+            #   uses: actions/upload-artifact@v3
+            #   with:
+            #       name: macos-vm-installer.exe
+            #       path: compiler/src.exe
+            #       if-no-files-found: error
