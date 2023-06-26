@@ -24,4 +24,5 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                   name: macos-vm-installer.exe
-                  path: src.exe
+                  path: compiler/src.exe
+                  if-no-files-found: error
