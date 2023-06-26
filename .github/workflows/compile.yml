@@ -1,0 +1,22 @@
+name: Compile
+run-name: Compiling
+on: [push]
+jobs:
+    compile:
+        runs-on: windows-latest
+        steps:
+            - name: Checkout Bat-2-Exec
+              uses: actions/checkout@v3
+              with:
+                  repository: erenerturk1/Bat-2-Exec
+                  path: compiler
+            - name: Check out repository code
+              uses: actions/checkout@v3
+              with:
+                  path: main
+                  sparse-checkout: |
+                      src.bat
+                  sparse-checkout-cone-mode: false
+            - name: Compiling src.bat
+              run: |
+                  compiler/Bat2Exe.bat src.bat
