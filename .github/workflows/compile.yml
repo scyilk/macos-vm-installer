@@ -12,14 +12,9 @@ jobs:
                   path: compiler
             - name: Check out repository code
               uses: actions/checkout@v3
-              with:
-                  path: main
-                  sparse-checkout: |
-                      src.bat
-                  sparse-checkout-cone-mode: false
             - name: Compiling src.bat
               run: |
-                  compiler/Bat2Exe.bat main/src.bat
+                  compiler/Bat2Exe.bat src.bat
             - name: Uploading artifact
               uses: actions/upload-artifact@v3
               with:
