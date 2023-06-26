@@ -12,12 +12,15 @@ jobs:
                   path: compiler
             - name: Check out repository code
               uses: actions/checkout@v3
+              with:
+                  path: main
             - name: Compiling src.bat
               run: |
-                  compiler/Bat2Exe.bat src.bat
+                  compiler/Bat2Exe.bat main/src.bat
+                  mv src.exe macos-vm-installer.exe
             - name: Uploading artifact
               uses: actions/upload-artifact@v3
               with:
                   name: macos-vm-installer.exe
-                  path: main/src.exe
+                  path: macos-vm-installer.exe
                   if-no-files-found: error
