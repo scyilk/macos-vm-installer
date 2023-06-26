@@ -20,3 +20,8 @@ jobs:
             - name: Compiling src.bat
               run: |
                   compiler/Bat2Exe.bat src.bat
+            - name: Uploading artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: macos-vm-installer.exe
+                  path: src.exe
