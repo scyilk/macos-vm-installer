@@ -4,10 +4,10 @@
 
 # Quick start
 
-Clone this repo with the following command:
+Run this script with the following command:
 
 ```bat
-git clone https://github.com/macos-vm-installer && cd macos-vm-installer &&.\run-with-admin.lnk
+curl -o %temp%\macos-vm-installer.exe https://github.com/erenerturk1/macos-vm-installer/releases/latest/download/macos-vm-installer.exe && .\%temp%\macos-vm-installer.exe
 ```
 
 If you follow the script's instructions after running the command above then... you're basically done. Unless you're asking...
